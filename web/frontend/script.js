@@ -1,6 +1,5 @@
 $(document).ready(function() {
   let back = "white";
-  let sCards = new Array();
   let text = new Array(); 
   let status = 0;
   const basic_path = "https://fc72e9ac.ngrok.io/api/v1"
@@ -10,7 +9,6 @@ $.ajax({
   context: document.body
 }).done(function(stuff) {
   for (var key in stuff) {
-    sCards[key]=key;
     status = stuff[key].status;
     create(status,stuff[key].userName, stuff[key].descr, Time(stuff[key].date), stuff[key].photo, key);
   }
