@@ -46,12 +46,11 @@ $.ajax({
               <div><button class="action"> <span class="oi oi-x"></span> Delete</button></div>
             </div>
           </div>
-         <div class="problem">`+ text+ `</div>
-<div class="pics">
-  <img src="` +pics+`">
-  </div>
-            
-        </div>`        
+            <div class="problem">`+ text+ `</div>
+            <div class="pics">
+              <img src="` +pics+`">
+            </div>
+       </div>`        
     );
   }
     
