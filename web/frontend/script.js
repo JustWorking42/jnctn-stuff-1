@@ -3,7 +3,7 @@ $(document).ready(function() {
   let text = new Array(); 
   let status = 0;
   const basic_path = "https://fc72e9ac.ngrok.io/api/v1"
-
+//Get data
 $.ajax({
   url: basic_path + "/reports",
   context: document.body
@@ -13,7 +13,7 @@ $.ajax({
     create(status,stuff[key].userName, stuff[key].descr, Time(stuff[key].date), stuff[key].photo, key);
   }
 });
-  
+  //Unix to time
   function Time(Unix){
     let a = new Date(Unix * 1000);
     let months =['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -26,14 +26,14 @@ $.ajax({
 
   
  
-  // Add new card
+  //Add card
   function create(status, name, text, date, pics, cid){
   $("#sortable"+status).html(function(){
     $(this).append(card(back, name, text, date, pics, cid))
   });
   }
 
-  // Define card
+  //Define card
   function card(color, name, text, date, pics, cardid) {
     return (
       `<div class="kanban-card d-flex flex-column" data-cid="`+cardid+`" style="background-color:white">
@@ -58,7 +58,7 @@ $.ajax({
   
  
 
-  // Delete card
+  //Delete card
   $(document).on("click", "button", function() {
     $(this)
       .parent().parent().parent().parent()
@@ -71,7 +71,7 @@ $.ajax({
     });
     
   });
-
+//Move card
   $(function() {
     $("#sortable0, #sortable1, #sortable2, #sortable3")
       .sortable({
